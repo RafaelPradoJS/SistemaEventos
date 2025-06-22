@@ -1,0 +1,28 @@
+Entidades e Atributos
+Participante
+cpf (PK),nome,email
+Evento
+id_evento (PK),nome,descricao,data,horario,local,capacidade,status
+Palestrante
+cpf (PK),nome,areaEspecializacao,miniBio,telefone
+Organizador
+cpf (PK),nome,cargo,email
+ Relacionamentos e Cardinalidades
+Participante ? Evento
+Relacionamento: Inscreve no
+Um participante pode se inscrever em vários eventos
+Um evento pode ter vários participantes
+Cardinalidade: (1,n) Participante ? Evento (1,n)
+Entidade associativa implícita: pode ser chamada Inscricao, com cpf_participante e id_evento como PK composta
+Palestrante ? Evento
+Relacionamento: Conta com
+Um palestrante pode participar de vários eventos
+Um evento pode ter vários palestrantes
+Cardinalidade: (1,n) Palestrante ? Evento (1,n)
+Entidade associativa: Evento_Palestrante com PK composta
+Organizador ? Evento
+Relacionamento: Tem
+Um organizador pode ser responsável por vários eventos
+Um evento tem apenas um organizador principal
+Cardinalidade: (1,n) Organizador ? Evento (1,1)
+Relacionamento direto ou entidade associativa Evento_Organizador
